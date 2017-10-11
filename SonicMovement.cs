@@ -83,9 +83,6 @@ public class Sonicmovement : MonoBehaviour {
 			
 		} 
 		
-		
-		
-		
 		else if((grounded || !doubleJump)&& Input.GetKeyDown(KeyCode.Space)){
 			anim.SetBool("Ground", false);
 			audio.clip = jumpSound;
@@ -125,9 +122,8 @@ public class Sonicmovement : MonoBehaviour {
 			
 		}
 		
-	Camera.main.transform.position = 
+		Camera.main.transform.position = 
 			new Vector3 (transform.position.x, transform.position.y+1, shadowController.me.playerZdepth - shadowController.me.cameraBuffer);
-
 		
 	}
 	
@@ -214,7 +210,7 @@ public class Sonicmovement : MonoBehaviour {
 			
 			
 		}
-		if(other.gameObject.tag =="Spikes"){
+		if(other.gameObject.tag == "Spikes"){
 			rigidbody2D.velocity = new Vector2(moves * maxSpeed, downForce/10);
 			//Application.LoadLevel("GameOver");
 			anim.SetBool("Death",false);
